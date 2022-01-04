@@ -1,6 +1,6 @@
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://admin:admin@mindeulle.s2jwk.mongodb.net/aaaa?retryWrites=true&w=majority
+      uri: mongodb+srv://admin:admin@mindeulle.s2jwk.mongodb.net/mindeulle?retryWrites=true&w=majority
 
 
