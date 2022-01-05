@@ -1,9 +1,12 @@
 package com.mindeulle.yoga.course.aggregate.profile.store.mongo;
 
+import com.mindeulle.yoga.course.aggregate.profile.domain.entity.Profile;
 import com.mindeulle.yoga.course.aggregate.profile.store.ProfileStore;
 import com.mindeulle.yoga.course.aggregate.profile.store.mongo.doc.ProfileDoc;
 import com.mindeulle.yoga.course.aggregate.profile.store.mongo.repository.ProfileMongoRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
 
 @Repository
 public class ProfileMongoStore implements ProfileStore {
@@ -15,7 +18,13 @@ public class ProfileMongoStore implements ProfileStore {
     }
 
     @Override
-    public ProfileDoc save(ProfileDoc doc) {
+    public ProfileDoc create(ProfileDoc doc) {
         return profileMongoRepository.save(doc);
+    }
+
+    @Override
+    public Profile retrieve(String id) {
+        Optional<ProfileDoc> byId = profileMongoRepository.findById(id);
+        return byId.map(ProfileDoc::toDomain).orElse(null);
     }
 }

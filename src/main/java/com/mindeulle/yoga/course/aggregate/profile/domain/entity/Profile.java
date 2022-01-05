@@ -1,15 +1,12 @@
 package com.mindeulle.yoga.course.aggregate.profile.domain.entity;
 
 import com.mindeulle.yoga.course.aggregate.common.domain.entity.Entity;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Profile extends Entity {
