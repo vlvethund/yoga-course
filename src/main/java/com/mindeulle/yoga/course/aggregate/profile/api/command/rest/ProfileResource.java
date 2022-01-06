@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.UUID;
 
 @Slf4j
@@ -25,15 +27,17 @@ public class ProfileResource {
     }
 
     @GetMapping("/save")
-    public void saveProfile() {
+    public void saveProfile(HttpServletRequest req) {
         ProfileDoc profileDoc = new ProfileDoc("utiful204", "123", "이태겸","010467065342");
 
-        Profile savedDoc = profileLogic.create(profileDoc);
-        Profile retrieve = profileLogic.retrieve(savedDoc.getId());
-
-        boolean matches = encoder.matches("123", retrieve.getPassword());
-
-        System.out.println(matches);
-        log.info(savedDoc.toString());
+        profileLogic.create(profileDoc);
+        HttpSession session = req.getSession();
+        session.setAttribute("something", "1234");
+//        Profile retrieve = profileLogic.retrieve(savedDoc.getId());
+//
+//        boolean matches = encoder.matches("123", retrieve.getPassword());
+//
+//        System.out.println(matches);
+//        log.info(savedDoc.toString());
     }
 }
