@@ -1,8 +1,8 @@
 package com.mindeulle.yoga.course.aggregate.payment.domain.entity;
 
-import com.mindeulle.yoga.course.aggregate.payment.domain.entity.vo.PaymentStatus;
 import com.mindeulle.yoga.course.aggregate.common.domain.entity.Entity;
 import com.mindeulle.yoga.course.aggregate.payment.domain.entity.vo.PaymentMethod;
+import com.mindeulle.yoga.course.aggregate.payment.domain.entity.vo.PaymentStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

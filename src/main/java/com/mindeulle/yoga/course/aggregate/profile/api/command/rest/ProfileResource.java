@@ -1,6 +1,5 @@
 package com.mindeulle.yoga.course.aggregate.profile.api.command.rest;
 
-import com.mindeulle.yoga.course.aggregate.profile.domain.entity.Profile;
 import com.mindeulle.yoga.course.aggregate.profile.domain.logic.ProfileLogic;
 import com.mindeulle.yoga.course.aggregate.profile.store.mongo.doc.ProfileDoc;
 import lombok.extern.slf4j.Slf4j;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.UUID;
 
 @Slf4j
 @RestController
@@ -30,7 +28,7 @@ public class ProfileResource {
     @GetMapping("/save")
     public void saveProfile(HttpServletRequest req) {
         //
-        ProfileDoc profileDoc = new ProfileDoc("utiful204", "123", "이태겸","010467065342");
+        ProfileDoc profileDoc = new ProfileDoc("utiful204", "123", "이태겸", "010467065342");
 
         profileLogic.create(profileDoc);
         HttpSession session = req.getSession();

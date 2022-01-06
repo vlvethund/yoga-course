@@ -1,7 +1,7 @@
 package com.mindeulle.yoga.course.aggregate.session.domain.entity;
 
-import com.mindeulle.yoga.course.aggregate.session.domain.entity.vo.Duration;
 import com.mindeulle.yoga.course.aggregate.common.domain.entity.Entity;
+import com.mindeulle.yoga.course.aggregate.session.domain.entity.vo.Duration;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
