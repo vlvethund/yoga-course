@@ -10,7 +10,7 @@ import java.util.UUID;
 @Getter
 @Setter
 public class Doc {
-
+    //
     @Id
     private String id;
     private String creator;
@@ -19,6 +19,7 @@ public class Doc {
     private LocalDateTime modified;
 
     public Doc() {
+        //
         this.id = UUID.randomUUID().toString();
         this.created = LocalDateTime.now();
     }

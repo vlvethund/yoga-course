@@ -9,6 +9,7 @@ import lombok.Setter;
 @Setter
 @Builder
 public class MobileVerification extends Entity {
+    //
     private String mobile;
     private String verificationCode;
 }

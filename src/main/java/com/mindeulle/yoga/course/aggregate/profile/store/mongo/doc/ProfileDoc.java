@@ -22,6 +22,7 @@ public class ProfileDoc extends Doc {
     private String mobile;
 
     public static Profile toDomain(ProfileDoc doc) {
+        //
         Profile profile = new Profile();
         BeanUtils.copyProperties(doc, profile);
         return profile;

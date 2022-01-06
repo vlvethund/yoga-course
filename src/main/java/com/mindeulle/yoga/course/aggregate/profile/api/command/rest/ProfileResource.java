@@ -22,12 +22,14 @@ public class ProfileResource {
     private final PasswordEncoder encoder;
 
     public ProfileResource(ProfileLogic profileLogic, PasswordEncoder encoder) {
+        //
         this.profileLogic = profileLogic;
         this.encoder = encoder;
     }
 
     @GetMapping("/save")
     public void saveProfile(HttpServletRequest req) {
+        //
         ProfileDoc profileDoc = new ProfileDoc("utiful204", "123", "이태겸","010467065342");
 
         profileLogic.create(profileDoc);

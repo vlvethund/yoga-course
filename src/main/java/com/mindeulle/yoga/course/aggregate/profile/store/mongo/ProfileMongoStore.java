@@ -10,20 +10,23 @@ import java.util.Optional;
 
 @Repository
 public class ProfileMongoStore implements ProfileStore {
-
+    //
     private final ProfileMongoRepository profileMongoRepository;
 
     public ProfileMongoStore(ProfileMongoRepository profileMongoRepository) {
+        //
         this.profileMongoRepository = profileMongoRepository;
     }
 
     @Override
     public ProfileDoc create(ProfileDoc doc) {
+        //
         return profileMongoRepository.save(doc);
     }
 
     @Override
     public Profile retrieve(String id) {
+        //
         Optional<ProfileDoc> byId = profileMongoRepository.findById(id);
         return byId.map(ProfileDoc::toDomain).orElse(null);
     }
