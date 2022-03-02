@@ -11,6 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 public class Profile extends Entity {
     //
+    private String userId;
     private String name;
     private String password;
     private String mobile;

@@ -2,5 +2,11 @@ spring:
   data:
     mongodb:
       uri: mongodb+srv://admin:admin@mindeulle.s2jwk.mongodb.net/mindeulle?retryWrites=true&w=majority
+  cache:
+    type: redis
+  redis:
+    host: redis-14922.c1.asia-northeast1-1.gce.cloud.redislabs.com
+    port: 14922
+    password: Q5Za3jRP8qh3NOecM9o9VO4VdOmNhVZ2
 
 

@@ -27,7 +27,13 @@ public class ProfileMongoStore implements ProfileStore {
     @Override
     public Profile retrieve(String id) {
         //
-        Optional<ProfileDoc> byId = profileMongoRepository.findById(id);
-        return byId.map(ProfileDoc::toDomain).orElse(null);
+        Optional<ProfileDoc> profileDoc = profileMongoRepository.findById(id);
+        return profileDoc.map(ProfileDoc::toDomain).orElse(null);
+    }
+
+    @Override
+    public Profile findByUserId(String userId) {
+        ProfileDoc profileDoc = profileMongoRepository.findByUserId(userId);
+        return ProfileDoc.toDomain(profileDoc);
     }
 }
